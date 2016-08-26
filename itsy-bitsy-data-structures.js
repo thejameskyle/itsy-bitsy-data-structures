@@ -178,7 +178,7 @@
 \*** ===================================================================== ***/
 
 /**
- * Big-O Notation is a way to roughly measuring the performance of algorithms
+ * Big-O Notation is a way of roughly measuring the performance of algorithms
  * in order to compare one against another when discussing them.
  *
  * Big-O is a mathematical notation that we borrowed in computer science to
