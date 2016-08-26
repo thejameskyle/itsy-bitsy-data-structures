@@ -1396,7 +1396,7 @@ class BinarySearchTree {
           break;
         }
 
-        // Otherwise just move on to the left node.
+        // Otherwise just move on to the right node.
         current = current.right;
 
       // If the value is less than the current.value we move to the left.
