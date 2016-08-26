@@ -241,7 +241,7 @@
  *                            Accessing    Searching    Inserting    Deleting
  *    -------------------------------------------------------------------------
  *                  Array     AWESOME!!    OKAY         OKAY         OKAY
- *            Linked List     OKAY         OKAY         AWESOME!!    AWSOME!!
+ *            Linked List     OKAY         OKAY         AWESOME!!    AWESOME!!
  *     Binary Search Tree     GREAT!       GREAT!       GREAT!       GREAT!
  *
  * Even further, some actions will have a different "average" performance and a
