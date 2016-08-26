@@ -182,7 +182,7 @@
  * in order to compare one against another when discussing them.
  *
  * Big-O is a mathematical notation that we borrowed in computer science to
- * classify algorithms by how the respond to the number (N) of items that you
+ * classify algorithms by how they respond to the number (N) of items that you
  * give them.
  *
  * There are two primary things that you measure with Big-O:
