@@ -574,7 +574,7 @@ class HashTable {
   }
 
   /**
-   * Next, lets define out "get" function so we have a way of accessing values
+   * Next, lets define our "get" function so we have a way of accessing values
    * by their key.
    *
    * HashTable access is constant O(1) - "AWESOME!!"
