@@ -129,7 +129,7 @@
 \*** ===================================================================== ***/
 
 /**
- * Algorithms is a fancy name for step-by-step sets of operations to be
+ * Algorithms is a fancy name for step-by-step lists of operations to be
  * performed.
  *
  * Data structures are implemented with algorithms, and algorithms are
