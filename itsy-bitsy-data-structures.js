@@ -1065,7 +1065,7 @@ class LinkedList {
       // First, find the previous node and the current node.
       var prev = this.get(position - 1);
       var current = prev.next;
-      // Then insert the new node in between them by setting it's "next" field
+      // Then insert the new node in between them by setting its "next" field
       // to the current node and updating the previous node's "next" field to
       // the new one.
       node.next = current;
@@ -1078,7 +1078,7 @@ class LinkedList {
 
   /**
    * The last method we need is a remove method. We're just going to look up a
-   * node by it's position and splice it out of the chain.
+   * node by its position and splice it out of the chain.
    */
 
   remove(position) {
@@ -1212,7 +1212,7 @@ class Tree {
     function walk(node) {
       // First call the callback on the node.
       callback(node);
-      // Then recursively call the walk function on all of it's children.
+      // Then recursively call the walk function on all of its children.
       node.children.forEach(walk);
     }
 
@@ -1237,7 +1237,7 @@ class Tree {
     }
 
     // Otherwise traverse the entire tree and find a node with a matching value
-    // and add the new node to it's children.
+    // and add the new node to its children.
     this.traverse(function(node) {
       if (node.value === parentValue) {
         node.children.push(newNode);
@@ -1291,7 +1291,7 @@ class Tree {
  * This is how a binary tree works. Each node can have two children:
  *
  *     - Left: Less than parent node's value.
- *     - Right: Greater than paren node's value.
+ *     - Right: Greater than parent node's value.
  *
  * > Note: In order to make this work all values must be unique in the tree.
  *
