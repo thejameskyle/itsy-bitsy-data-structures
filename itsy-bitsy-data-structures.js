@@ -207,6 +207,7 @@
  *     Linear         O(N)         OKAY.
  *     Linearithmic   O(N log N)   UGH...
  *     Polynomial     O(N ^ 2)     SHITTY
+ *     Exponential    O(2 ^ N)     HORRIBLE
  *     Factorial      O(N!)        WTF
  *
  * To give you an idea of how many operations we're talking about. Let's look
@@ -219,6 +220,7 @@
  *     O(N)           5            10             20             30
  *     O(N log N)     8.0471...    23.0258...     59.9146...     102.0359...
  *     O(N ^ 2)       25           100            400            900
+ *     O(2 ^ N)       32           1024           1,048,576      1,073,741,824
  *     O(N!)          120          3,628,800      2,432,902,0... 265,252,859,812,191,058,636,308,480,000,000
  *
  * As you can see, even for relatively small sets of data you could do a *lot*
