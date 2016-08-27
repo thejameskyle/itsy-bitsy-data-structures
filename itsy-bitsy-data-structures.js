@@ -510,7 +510,7 @@ class List {
 \*** ===================================================================== ***/
 
 /**
- * Hash tables are an *unordered* data structure, instead we have "keys" and "values" where we
+ * A hash table is a data structure that's *unordered*. Instead we have "keys" and "values" where we
  * computed an address in memory using the key.
  *
  * The basic idea is that we have keys that are "hashable" (which we'll get to
