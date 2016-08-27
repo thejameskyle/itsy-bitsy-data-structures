@@ -136,6 +136,45 @@ var ItsyBitsyDataStructures = require('./itsy-bitsy-data-structures');
  */
 
 (function() {
+  var skipList = new ItsyBitsyDataStructures.SkipList();
+
+  skipList.add(12);
+  skipList.add(67);
+  skipList.add(81);
+  skipList.add(41);
+  skipList.add(72);
+  skipList.add(10);
+  skipList.add(55);
+  skipList.add(55);
+  skipList.add(32);
+
+  assert.equal(skipList.length, 9);
+
+  assert.deepEqual(skipList.range(10, 15), [10, 12]);
+  assert.deepEqual(skipList.range(50, 70), [55, 55, 67]);
+
+  assert.deepEqual(skipList.range(-Infinity, Infinity), [10, 12, 32, 41, 55, 55, 67, 72, 81]);
+
+  skipList.remove(55);
+  assert.equal(skipList.length, 8);
+  assert.deepEqual(skipList.range(-Infinity, Infinity), [10, 12, 32, 41, 55, 67, 72, 81]);
+
+  skipList.remove(55);
+  assert.equal(skipList.length, 7);
+  assert.deepEqual(skipList.range(-Infinity, Infinity), [10, 12, 32, 41, 67, 72, 81]);
+
+  skipList.remove(80000000);
+  assert.equal(skipList.length, 7);
+  assert.deepEqual(skipList.range(-Infinity, Infinity), [10, 12, 32, 41, 67, 72, 81]);
+}());
+
+/**
+ * ============================================================================
+ * ,.-'`'-.,.-'`'-.,.-'`'-.,.-'`'-.,.-'`'-.,.-'`'-.,.-'`'-.,.-'`'-.,.-'`'-.,.-'
+ * ============================================================================
+ */
+
+(function() {
   var tree = new ItsyBitsyDataStructures.Tree();
 
   tree.add(1);

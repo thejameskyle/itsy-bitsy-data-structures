@@ -1097,6 +1097,250 @@ class LinkedList {
   }
 }
 
+
+/*** ===================================================================== ***\
+ ** - SKIP LISTS -------------------------------------------------------- **
+\*** ===================================================================== ***/
+
+/**
+ * Linked Lists are great at adding and removing items in arbitrary positions
+ * and reordering linked-lists is very efficient, but finding a particular item
+ * in a linked list can be kind of slow - if you want the 10th item in a list
+ * then the get() method in the class above needs to walk over 9 items before
+ * returning the value you were looking for.
+ * The more items your list contains, the worse the performance gets.
+ *
+ * Skip Lists are a bit like linked lists, but whereas a node in a linked list can
+ * only point to the very next item in the list, a node in a skip list can point
+ * to an arbitrary number of subsequent nodes. These extra pointers are like fast
+ * lanes which get us closer to the value we're looking for much quicker than a
+ * linked list can.
+ *
+ * Nodes in a skip list look a bit like this:
+ *
+ *                                                                  Level
+ *
+ *    Fast Lane –→  |––––––––––––––––––––––→|––––––––––→|––––→|       3
+ *                  |                       |           |     |
+ *    Fast Lane –→  |––––––––––→|––––––––––→|––––––––––→|––––→|       2
+ *                  |           |           |           |     |
+ *  List Values –→  10 -> 12 -> 32 -> 41 -> 55 -> 67 -> 72 -> 81      1
+ *
+ *
+ * If we want to look up number 67 in the list, starting at the highest level
+ * in the list we jump from 10 to 55, but can't go further at this level
+ * because the next node, 72, is larger than our target. We then go down a level,
+ * and try and skip forward again, but at level 2 we immediately hit 72 again
+ * and that's too big. We drop down a level again, skip forward and find node 67,
+ * the value we were looking for! With a skip list we got there in 2 jumps, when
+ * a linked list would take 5.
+ *
+ * You might have noticed that not all of the nodes in the example above have the
+ * same "height". Some have 3 pointers, some have 2 and some just have one like a
+ * a node in a normal linked list. If we gave every node the maximum number of
+ * pointers then any operation which modifies the skip list would take a long time
+ * and it would take up a lot more memory than a linked list. Too few pointers and
+ * the skip list performance degrades to that of a linked list, so how do we decide
+ * how many pointers each node should get to keep things awesome?
+ *
+ * We flip a coin. Sort of. Every time we need to add a new node to the list we
+ * generate a random height value, but this random height has a probability of 1/2
+ * of being of the lowest height (1), a probability of 1/4 that the height will be 2,
+ * a probability of 1/8 that the height will be 3 and so on. This means that most
+ * nodes will have fairly low heights, but we have enough taller nodes to give us
+ * O(log N) performance on average. This randomized nature makes skip lists a type of
+ * *probabilistic data structure*.
+ *
+ * Skip Lists are very similar to binary search trees and have similar performance
+ * characteristics. Skip lists are generally simpler to implement and avoid the
+ * complex rebalancing operations most kinds of tree typically require.
+ * Their data is always kept in sorted order, so they're great at answering questions
+ * such as "find me all the values within this range".
+ */
+
+class SkipList {
+
+  /**
+   * Like a linked list, skip lists have a length and a "head" which represents the
+   * start of the list. Unlike a linked list, this head does not contain any data,
+   * instead it's a dummy node which only contains pointers.
+   */
+
+  constructor() {
+    // Keep track of the highest node in the list so far.
+    this.height = 1;
+    // The maximum height of any node.
+    this.maxHeight = 32;
+    // The number of items in the list.
+    this.length = 0;
+    // The dummy node that contains pointers to all levels in the list.
+    this.head = this.makeNode(this.maxHeight);
+  }
+
+  /**
+   * Makes a list node with the given height but doesn't actually insert it into the
+   * list yet.
+   *
+   * Each node consists of a simple object with two properties - an array of pointers,
+   * and a value.
+   */
+
+  makeNode(height) {
+    var pointers = [];
+    for (var index = 0; index < height; index++) {
+      pointers.push(null); // There's nothing to point to yet, null is a placeholder.
+    }
+    return {
+      pointers: pointers,
+      value: null // we don't have a value for this node yet
+    };
+  }
+
+  /**
+   * Return a random node height for a new node.
+   *
+   * If the height generated is larger than the list height, the list height will be
+   * incremented.
+   */
+
+  randomNodeHeight () {
+    // The initial height of the node.
+    var height = 1;
+    // Count up to our maximum height, flipping a count each step of the way.
+    for (var index = 0; index < this.maxHeight; index++) {
+      // Flip a coin
+      var isTails = Math.random() <= 0.5;
+
+      if (isTails) {
+        // We got tails, we're done.
+        break;
+      }
+      else {
+        // We got heads, have another go.
+        height++;
+      }
+    }
+    if (height > this.height) {
+      // We got a height bigger than the list height, so we need to increase the list
+      // height, but we only increase it by 1. Larger jumps would not help performance.
+      this.height++;
+      return this.height;
+    }
+    else {
+      return height;
+    }
+  }
+
+  /**
+   * Firstly we need a way to add values to the list.
+   */
+
+  add(value) {
+    // Create a height for this node
+    var height = this.randomNodeHeight();
+
+    // Make the actual node.
+    var node = this.makeNode(height);
+
+    // And set the value.
+    node.value = value;
+
+    var current = this.head;
+    for (var level = this.maxHeight - 1; level >= 0; level--) {
+      for (; current.pointers[level] != null; current = current.pointers[level]) {
+        var next = current.pointers[level];
+        if (next.value > value) {
+          break;
+        }
+      }
+
+      if (level <= height) {
+        node.pointers[level] = current.pointers[level];
+        current.pointers[level] = node;
+      }
+    }
+
+    // Finally just increment the length.
+    this.length++;
+  }
+
+  /**
+   * We need a way to get a range of values from the list.
+   */
+
+  range(min, max) {
+    // Somewhere to hold our results.
+    var results = [];
+
+    // Represents the current node being iterated through in the list.
+    var current = this.head;
+
+    // Walk forward until we find a node that is at least as large as our min value.
+    for (var level = this.maxHeight - 1; level >= 0; level--) {
+      for (; current.pointers[level] != null; current = current.pointers[level]) {
+        var next = current.pointers[level];
+        // Is the next value greater than or equal to our minimum?
+        if (next.value >= min) {
+          // We've found our position, stop walking.
+          break;
+        }
+        // otherwise, continue to the next node.
+      }
+      // continue to the next lower level and try again.
+    }
+
+    // We're currently pointing at the node immediately *before* our minimum value,
+    // so let's move to the next one.
+    current = current.pointers[0];
+
+    // We've found our start node, so keep walking forwards until we hit a node
+    // which exceeds our maximum value.
+    while (current) {
+      if (current.value > max) {
+        // we've come to the end of our results
+        break;
+      }
+      else {
+        // add this to our list of results.
+        results.push(current.value);
+
+        // Move to the next value.
+        current = current.pointers[0];
+      }
+    }
+
+    return results;
+  }
+
+  /**
+   * The last method we need is a remove method. We're just going to look up a
+   * node by it's value and remove it.
+   */
+
+  remove(value) {
+    var current = this.head;
+
+    var found = false;
+    for (var level = this.maxHeight - 1; level >= 0; level--) {
+      for (; current.pointers[level] != null; current = current.pointers[level]) {
+        var next = current.pointers[level];
+        if (next.value === value) {
+          found = true;
+          current.pointers[level] = next.pointers[level];
+          break;
+        }
+        else if (next.value > value) {
+          break;
+        }
+      }
+    }
+    if (found) {
+      // If we found the item then we just decrement the length.
+      this.length--;
+    }
+  }
+}
+
 /**
  * ============================================================================
  * ,.-'`'-.,.-'`'-.,.-'`'-.,.-'`'-.,.-'`'-.,.-'`'-.,.-'`'-.,.-'`'-.,.-'`'-.,.-'
@@ -1455,6 +1699,7 @@ module.exports = {
   Queue: Queue,
   Graph: Graph,
   LinkedList: LinkedList,
+  SkipList: SkipList,
   Tree: Tree,
   BinarySearchTree: BinarySearchTree
 };
