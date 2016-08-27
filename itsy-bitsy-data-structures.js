@@ -1293,7 +1293,7 @@ class Tree {
  *
  * > Note: In order to make this work all values must be unique in the tree.
  *
- * This makes the traversal find a value very efficient. Say we're trying to
+ * This makes the traversal to find a value very efficient. Say we're trying to
  * find the number 5 in our tree:
  *
  *             (4)         <--- 5 > 4, so move right.
