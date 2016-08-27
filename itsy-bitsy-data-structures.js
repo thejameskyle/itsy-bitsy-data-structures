@@ -78,7 +78,7 @@
  * Knowing your data structures can help you:
  *
  *   - Manage complexity and make your programs easier to follow.
- *   - Build highly-performant, memory-efficient programs.
+ *   - Build highly-performance, memory-efficient programs.
  *
  * The first of those is the one that I believe to be more important. Using the
  * right data structure can drastically simplify what would otherwise be
@@ -89,7 +89,7 @@
  *
  * In order to learn about data structures, we're going to implement a few of
  * them together. Don't worry, we'll keep the code nice and short. In fact,
- * there's way more comments than there is code.
+ * there are way more comments than there is code.
  */
 
 /**
@@ -139,7 +139,7 @@
  * sheeple!)
  *
  * Any given task can be implemented in an infinite number of ways. So for
- * common tasks there are often many different algorithms people have come up
+ * common tasks there are often many different algorithms that people have come up
  * with.
  *
  * For example, there are an absurd number of algorithms for sorting a set of
@@ -194,8 +194,8 @@
  *   while running given a set of items.
  *
  * We measure these independently from one another because while an algorithm
- * may perform less operations than another it may also take up way more
- * memory. Depending on what your requirements are one may be a better choice
+ * may perform less operations than another, it may also take up way more
+ * memory. Depending on what your requirements are, one may be a better choice
  * than the other.
  *
  * These are some common Big-O's:
@@ -226,7 +226,7 @@
  * As you can see, even for relatively small sets of data you could do a *lot*
  * of extra work.
  *
- * With data structures, you have 4 primary types of actions you can perform:
+ * With data structures, you can perform 4 primary types of actions:
  * Accessing, Searching, Inserting, and Deleting.
  *
  * It is important to note that data structures may be good at one action but
@@ -279,7 +279,7 @@
  *   Addresses: 0    1    2    3    4    5    6    7    8    9    ...
  *
  * If you've ever wondered why things are zero-indexed in programming languages
- * before it is because of the way that memory works. If you want to read the
+ * before, it is because of the way that memory works. If you want to read the
  * first chunk of memory you read from 0 to 1, the second you read from 1 to 2.
  * So the address that you hold onto for each of those is 0 and 1 respectively.
  *
