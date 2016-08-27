@@ -1380,13 +1380,16 @@ class BinarySearchTree {
     if (this.root === null) {
       this.root = node;
       return;
+
+    // If the value already exists in the tree, we don't do anyting.
+    } else if (this.contains(value)) {
+      return;
     }
 
     // We start at the root.
     var current = this.root;
 
-    // We're going to loop until we've either added our item or discovered it
-    // already exists in the tree.
+    // We're going to loop until we've added our item.
     while (true) {
 
       // If the value is greater than the current.value we move to the right.
@@ -1412,11 +1415,6 @@ class BinarySearchTree {
 
         // Otherwise just move on to the left node.
         current = current.left;
-
-      // If the number isn't less than or greater, then it must be the same and
-      // we don't do anything.
-      } else {
-        break;
       }
     }
   }
