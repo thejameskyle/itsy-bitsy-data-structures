@@ -1152,7 +1152,7 @@ class LinkedList {
  * If you can draw a loop between connected nodes in a tree... well, you don't
  * have a tree.
  *
- * Trees have many different uses, they can used to optimize searching or
+ * Trees have many different uses, they can be used to optimize searching or
  * sorting. They can organize programs better. They can give you a
  * representation that is easier to work with.
  */
