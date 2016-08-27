@@ -597,7 +597,7 @@ class HashTable {
    */
 
   set(key, value) {
-    // Again we start by turning the key into and address.
+    // Again we start by turning the key into an address.
     var address = this.hashKey(key);
     // Then just set the value at that address.
     this.memory[address] = value;
