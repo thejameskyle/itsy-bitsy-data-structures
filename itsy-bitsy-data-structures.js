@@ -142,7 +142,7 @@
  * common tasks there are often many different algorithms people have come up
  * with.
  *
- * For example, there is an absurd number of algorithms for sorting a set of
+ * For example, there are an absurd number of algorithms for sorting a set of
  * unordered items:
  *
  *     Insertion Sort, Selection Sort, Merge Sort, Bubble Sort, Heap Sort,
