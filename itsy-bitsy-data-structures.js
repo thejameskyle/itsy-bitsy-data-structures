@@ -78,13 +78,13 @@
  * Knowing your data structures can help you:
  *
  *   - Manage complexity and make your programs easier to follow.
- *   - Build highly-performance, memory-efficient programs.
+ *   - Build high-performance, memory-efficient programs.
  *
- * The first of those is the one that I believe to be more important. Using the
+ * I believe that the former is more important. Using the
  * right data structure can drastically simplify what would otherwise be
  * complicated logic.
  *
- * The second point is important too. If performance or memory matters then
+ * The latter is important too. If performance or memory matters then
  * using the right data structure is more than often essential.
  *
  * In order to learn about data structures, we're going to implement a few of
