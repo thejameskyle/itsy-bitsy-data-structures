@@ -514,7 +514,7 @@ class List {
  * computed an address in memory using the key.
  *
  * The basic idea is that we have keys that are "hashable" (which we'll get to
- * in a second) and can by used to add, access, and remove from memory very
+ * in a second) and can be used to add, access, and remove from memory very
  * efficiently.
  *
  *     var hashTable = new HashTable();
