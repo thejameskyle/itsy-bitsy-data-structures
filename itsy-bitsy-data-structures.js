@@ -135,7 +135,7 @@
  * Data structures are implemented with algorithms, and algorithms are
  * implemented with data structures. It's data structures and algorithms all
  * the way down until you reach the micro-scopic people with punch cards that
- * control the computer (Yeah– Intel is enslaving super tiny people. Wake up
+ * control the computer. (Yeah– Intel is enslaving super tiny people. Wake up
  * sheeple!)
  *
  * Any given task can be implemented in an infinite number of ways. So for
@@ -636,7 +636,7 @@ class HashTable {
  *   - Abstracting away implementation details
  *
  * These data structures focus on creating an organization that makes sense for
- * various types of programs. They insert a language that allows you discuss
+ * various types of programs. They insert a language that allows you to discuss
  * more complicated logic. All of this while abstracting away implementation
  * details so that their implementation can change to be made faster.
  */
@@ -660,14 +660,14 @@ class HashTable {
 
 /**
  * Stacks are similar to lists in that they have an order, but they limit you
- * to only pushing and popping values at the end of the list, Which as we saw
+ * to only pushing and popping values at the end of the list, which as we saw
  * before are very fast operations when mapping directly to memory.
  *
  * However, Stacks can also be implemented with other data structures in order
  * to add functionality to them.
  *
  * The most common usage of stacks is places where you have one process adding
- * items to the stack, and other process removing them from the end–
+ * items to the stack and another process removing them from the end–
  * prioritizing items added most recently.
  */
 
@@ -684,7 +684,7 @@ class Stack {
   }
 
   /**
-   * We're going to implement two of the functions from lists "push" and "pop"
+   * We're going to implement two of the functions from list's "push" and "pop"
    * which are going to be identical in terms of functionality.
    */
 
@@ -744,7 +744,7 @@ class Stack {
 \*** ===================================================================== ***/
 
 /**
- * Next we're going to build a queue which is complimentary to stacks. The
+ * Next, we're going to build a queue which is complimentary to stacks. The
  * difference is that this time you remove items from the start of the queue
  * rather than the end. Removing the oldest items rather than the most recent.
  *
@@ -1443,7 +1443,7 @@ class BinarySearchTree {
 /**
  * I know that was probably a bit dense, but hopefully it gave you a good
  * amount of knowledge. If you enjoyed it, would you mind giving the repo a
- * star and following me on twitter (@thejameskyle)?
+ * star and follow me on twitter (@thejameskyle)?
  *
  * You can also check out my other code walkthrough, "The Super Tiny Compiler"
  *       here ------> https://github.com/thejameskyle/the-super-tiny-compiler
