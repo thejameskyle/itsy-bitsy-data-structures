@@ -273,7 +273,7 @@
  * where you can store information. You hold onto memory addresses in order to
  * find information.
  *
- * Lets imagine a chunk of memory like this:
+ * Let's imagine a chunk of memory like this:
  *
  *      Values: |1001|0110|1000|0100|0101|1010|0010|0001|1101|1011...
  *   Addresses: 0    1    2    3    4    5    6    7    8    9    ...
@@ -576,7 +576,7 @@ class HashTable {
   }
 
   /**
-   * Next, lets define our "get" function so we have a way of accessing values
+   * Next, let's define our "get" function so we have a way of accessing values
    * by their key.
    *
    * HashTable access is constant O(1) - "AWESOME!!"
@@ -1368,7 +1368,7 @@ class BinarySearchTree {
    */
 
   add(value) {
-    // First lets setup our node.
+    // First let's setup our node.
     var node = {
       value: value,
       left: null,
