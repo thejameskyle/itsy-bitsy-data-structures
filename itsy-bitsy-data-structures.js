@@ -1135,7 +1135,7 @@ class LinkedList {
  *     Application-Specific Trees:
  *       Abstract Syntax Tree, Parse Tree, Decision Tree, Minimax Tree, ...
  *
- * Little did you know you'd be studying dendrology today... and thats not even
+ * Little did you know you'd be studying dendrology today... and that's not even
  * all of them. But don't let any of this scare you, most of those don't matter
  * at all. There were just a lot of Computer Science PhDs who had something to
  * prove.
@@ -1175,7 +1175,7 @@ class LinkedList {
 
 /**
  * We'll start off with an extremely simple tree structure. It doesn't have any
- * special rules to it and looks someting like this:
+ * special rules to it and looks something like this:
  *
  *     Tree {
  *       root: {
