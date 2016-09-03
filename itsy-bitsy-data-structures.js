@@ -792,7 +792,7 @@ class Queue {
 
   /**
    * Same as stacks we're going to define a "peek" function for getting the next
-   * value without removing it from the stack.
+   * value without removing it from the queue.
    */
 
   peek() {
