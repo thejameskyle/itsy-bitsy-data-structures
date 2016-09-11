@@ -394,7 +394,7 @@ class List {
     // Get the last value, stop storing it, and return it.
     var lastAddress = this.length - 1;
     var value = this.memory[lastAddress];
-    delete this.memory[lastAddress];
+    this.memory.splice(lastAddress, 1);
     this.length--;
 
     // Also return the value so it can be used.
@@ -475,7 +475,7 @@ class List {
     }
 
     // Delete the last item since it is now in the previous address.
-    delete this.memory[this.length - 1];
+    this.memory.splice(this.length - 1, 1);
     this.length--;
 
     return value;
