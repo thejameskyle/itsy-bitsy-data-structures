@@ -242,7 +242,7 @@
  *
  *                            Accessing    Searching    Inserting    Deleting
  *    -------------------------------------------------------------------------
- *                  Array     AWESOME!!    OKAY         OKAY         OKAY
+ *                  Array     AWESOME!!    AWESOME!!    OKAY         OKAY
  *            Linked List     OKAY         OKAY         AWESOME!!    AWESOME!!
  *     Binary Search Tree     GREAT!       GREAT!       GREAT!       GREAT!
  *
@@ -1030,7 +1030,7 @@ class LinkedList {
     if (position >= this.length) {
       throw new Error('Position outside of list range');
     }
-    
+
     // Start with the head of the list.
     var current = this.head;
 
