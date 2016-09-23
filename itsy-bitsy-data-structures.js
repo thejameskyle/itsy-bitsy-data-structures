@@ -1029,7 +1029,7 @@ class LinkedList {
     if (position >= this.length) {
       throw new Error('Position outside of list range');
     }
-    
+
     // Start with the head of the list.
     var current = this.head;
 
