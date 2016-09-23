@@ -898,7 +898,7 @@ class Graph {
 
   addNode(value) {
     this.nodes.push({
-      value: value,
+      value,
       lines: []
     });
   }
@@ -1052,7 +1052,7 @@ class LinkedList {
   add(value, position) {
     // First create a node to hold our value.
     var node = {
-      value: value,
+      value,
       next: null
     };
 
@@ -1230,7 +1230,7 @@ class Tree {
 
   add(value, parentValue) {
     var newNode = {
-      value: value,
+      value,
       children: []
     };
 
@@ -1374,7 +1374,7 @@ class BinarySearchTree {
   add(value) {
     // First let's setup our node.
     var node = {
-      value: value,
+      value,
       left: null,
       right: null
     };
@@ -1455,12 +1455,12 @@ class BinarySearchTree {
 
 // Just exporting everything for the tests...
 module.exports = {
-  List: List,
-  HashTable: HashTable,
-  Stack: Stack,
-  Queue: Queue,
-  Graph: Graph,
-  LinkedList: LinkedList,
-  Tree: Tree,
-  BinarySearchTree: BinarySearchTree
+  List,
+  HashTable,
+  Stack,
+  Queue,
+  Graph,
+  LinkedList,
+  Tree,
+  BinarySearchTree
 };
