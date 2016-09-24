@@ -914,9 +914,7 @@ class Graph {
    */
 
   find(value) {
-    return this.nodes.find(function(node) {
-      return node.value === value;
-    });
+    return this.nodes.find(node => node.value === value);
   }
 
   /**
@@ -1242,7 +1240,7 @@ class Tree {
 
     // Otherwise traverse the entire tree and find a node with a matching value
     // and add the new node to its children.
-    this.traverse(function(node) {
+    this.traverse(node => {
       if (node.value === parentValue) {
         node.children.push(newNode);
       }
