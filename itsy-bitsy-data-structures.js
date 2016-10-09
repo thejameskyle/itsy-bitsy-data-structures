@@ -1029,7 +1029,7 @@ class LinkedList {
     if (position >= this.length) {
       throw new Error('Position outside of list range');
     }
-    
+
     // Start with the head of the list.
     var current = this.head;
 
@@ -1086,6 +1086,10 @@ class LinkedList {
    */
 
   remove(position) {
+    // We should not be able to remove from an empty list
+    if (!this.head) {
+      throw new Error('Removing from empty list')
+    }
     // If we're removing the first node we simply need to set the head to the
     // next node in the chain
     if (position === 0) {
