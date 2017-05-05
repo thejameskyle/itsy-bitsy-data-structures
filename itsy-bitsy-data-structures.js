@@ -1022,7 +1022,7 @@ class LinkedList {
    */
 
   get(position) {
-    // Throw an error if less items than the requested position are available
+    // Throw an error if position is greater than the length of the LinkedList
     if (position >= this.length) {
       throw new Error('Position outside of list range');
     }
