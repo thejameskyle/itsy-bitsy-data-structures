@@ -241,7 +241,7 @@
  *
  *                            Accessing    Searching    Inserting    Deleting
  *    -------------------------------------------------------------------------
- *                  Array     AWESOME!!    OKAY         OKAY         OKAY
+ *                  Array     AWESOME!!    AWESOME!!    OKAY         OKAY
  *            Linked List     OKAY         OKAY         AWESOME!!    AWESOME!!
  *     Binary Search Tree     GREAT!       GREAT!       GREAT!       GREAT!
  *
