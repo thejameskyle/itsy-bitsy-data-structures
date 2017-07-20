@@ -405,7 +405,7 @@ class List {
    * simple operations because they don't need to be concerned with the rest of
    * the list.
    *
-   * Let's see what happens when we operate on the begining of the list with
+   * Let's see what happens when we operate on the beginning of the list with
    * "unshift" and "shift".
    */
 
