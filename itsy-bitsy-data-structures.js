@@ -468,7 +468,7 @@ class List {
     let value = this.memory[0];
 
     // Iterate through each item...
-    for (let address = 0; address < this.length; address++) {
+    for (let address = 0; address < this.length - 1; address++) {
       // and replace them with the next item in the list.
       this.memory[address] = this.memory[address + 1];
     }
