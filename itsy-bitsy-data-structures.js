@@ -80,9 +80,9 @@
  *   - Manage complexity and make your programs easier to follow.
  *   - Build high-performance, memory-efficient programs.
  *
- * I believe that the former is more important. Using the
- * right data structure can drastically simplify what would otherwise be
- * complicated logic.
+ * I believe that the former is more important. Using the right 
+ * data structure can drastically simplify what would otherwise 
+ * be complicated logic.
  *
  * The latter is important too. If performance or memory matters then
  * using the right data structure is more than often essential.
@@ -108,7 +108,7 @@
  * what that data is and what you need to do with it, one representation will
  * be a better choice than the others.
  *
- * To understand why, let's first talk a bit about algorithms.
+ * To understand why let's first talk a bit about algorithms.
  */
 
 /*** ===================================================================== ***\
@@ -129,12 +129,12 @@
 \*** ===================================================================== ***/
 
 /**
- * Algorithms is a fancy name for step-by-step sets of operations to be
+ * Algorithm is a fancy name for step-by-step sets of operations to be
  * performed.
  *
  * Data structures are implemented with algorithms, and algorithms are
  * implemented with data structures. It's data structures and algorithms all
- * the way down until you reach the micro-scopic people with punch cards that
+ * the way down until you reach the microscopic people with punch cards that
  * control the computer. (That's how computers work right?)
  *
  * Any given task can be implemented in an infinite number of ways. So for
@@ -151,7 +151,7 @@
  * Some are easy to implement. Some are based on assumptions about the dataset.
  *
  * Every single one of them will be better for *something*. So you'll need to
- * make a decision based on what your needs are and for that you'll need a way
+ * make a decision based on what your needs are and for that, you'll need a way
  * of comparing them, a way to measure them.
  *
  * When we compare the performance of algorithms we use a rough measurement of
@@ -193,7 +193,7 @@
  *   while running given a set of items.
  *
  * We measure these independently from one another because while an algorithm
- * may perform less operations than another, it may also take up way more
+ * may perform fewer operations than another, it may also take up way more
  * memory. Depending on what your requirements are, one may be a better choice
  * than the other.
  *
@@ -222,8 +222,8 @@
  *     O(2 ^ N)       32           1024           1,048,576      1,073,741,824
  *     O(N!)          120          3,628,800      2,432,902,0... 265,252,859,812,191,058,636,308,480,000,000
  *
- * As you can see, even for relatively small sets of data you could do a *lot*
- * of extra work.
+ * As you can see, even for relatively small sets of data you could do 
+ * a **lot** of extra work.
  *
  * With data structures, you can perform 4 primary types of actions:
  * Accessing, Searching, Inserting, and Deleting.
@@ -254,18 +254,18 @@
  * structures so that you can choose from them.
  */
 
- /*** ===================================================================== ***\
-  ** - MEMORY -------------------------------------------------------------- **
-  * ========================================================================= *
-  *                             _.-..                                         *
-  *                           ,'9 )\)`-.,.--.                                 *
-  *                           `-.|           `.                               *
-  *                              \,      ,    \)                              *
-  *                               `.  )._\   (\                               *
-  *                                |//   `-,//                                *
-  *                                ]||    //"                                 *
-  **                        hjw    ""    ""                                  **
- \*** ===================================================================== ***/
+/*** ===================================================================== ***\
+ ** - MEMORY -------------------------------------------------------------- **
+ * ========================================================================= *
+ *                             _.-..                                         *
+ *                           ,'9 )\)`-.,.--.                                 *
+ *                           `-.|           `.                               *
+ *                              \,      ,    \)                              *
+ *                               `.  )._\   (\                               *
+ *                                |//   `-,//                                *
+ *                                ]||    //"                                 *
+ **                        hjw    ""    ""                                  **
+\*** ===================================================================== ***/
 
 /**
  * A computer's memory is pretty boring, it's just a bunch of ordered slots
@@ -353,13 +353,13 @@ class List {
    * Because lists have an order you can insert stuff at the start, middle,
    * or end of them.
    *
-   * For our implementation we're going to focus on adding and removing values
+   * For our implementation, we're going to focus on adding and removing values
    * at the start or end of our list with these four methods:
    *
    *   - Push    - Add value to the end
-   *   - Pop     - Remove value from the end
+   *   - Pop     - Remove a value from the end
    *   - Unshift - Add value to the start
-   *   - Shift   - Remove value from the start
+   *   - Shift   - Remove a value from the start
    */
 
   /*
@@ -405,7 +405,7 @@ class List {
    * simple operations because they don't need to be concerned with the rest of
    * the list.
    *
-   * Let's see what happens when we operate on the beginning of the list with
+   * Let's see what happens when we operate at the beginning of the list with
    * "unshift" and "shift".
    */
 
@@ -552,12 +552,12 @@ class HashTable {
    * The result is that you can end up with collisions. Places where two keys
    * get turned into the same address.
    *
-   * Any real world hash table implementation would have to deal with this,
-   * however we are just going to glaze over it and pretend that doesn't happen.
+   * Any real-world hash table implementation would have to deal with this,
+   * however, we are just going to glaze over it and pretend that doesn't happen.
    */
 
   /**
-   * Let's setup our "hashKey" function.
+   * Let's set up our "hashKey" function.
    *
    * Don't worry about understanding the logic of this function, just know that
    * it accepts a string and outputs a (mostly) unique address that we will use
@@ -665,7 +665,7 @@ class HashTable {
  * However, Stacks can also be implemented with other data structures in order
  * to add functionality to them.
  *
- * The most common usage of stacks is places where you have one process adding
+ * The most common usage of the stacks is in the places where you have one process adding
  * items to the stack and another process removing them from the end–
  * prioritizing items added most recently.
  */
@@ -897,7 +897,10 @@ class Graph {
    */
 
   addNode(value) {
-    return this.nodes.push({ value, lines: [] });
+    return this.nodes.push({
+      value,
+      lines: []
+    });
   }
 
   /**
@@ -905,7 +908,7 @@ class Graph {
    * you'd have another data structure on top of a graph in order to make
    * searching faster.
    *
-   * But for our case we're simply going to search through all of nodes to find
+   * But for our case, we're simply going to search through all of the nodes to find
    * the one with the matching value. This is a slower option, but it works for
    * now.
    */
@@ -1018,7 +1021,7 @@ class LinkedList {
    * First we need a way to retrieve a value in a given position.
    *
    * This works differently than normal lists as we can't just jump to the
-   * correct position. Instead we need to move through the individual nodes.
+   * correct position. Instead, we need to move through the individual nodes.
    */
 
   get(position) {
@@ -1048,7 +1051,10 @@ class LinkedList {
 
   add(value, position) {
     // First create a node to hold our value.
-    let node = { value, next: null };
+    let node = {
+      value,
+      next: null
+    };
 
     // We need to have a special case for nodes being inserted at the head.
     // We'll set the "next" field to the current head and then replace it with
@@ -1057,8 +1063,8 @@ class LinkedList {
       node.next = this.head;
       this.head = node;
 
-    // If we're adding a node in any other position we need to splice it in
-    // between the current node and the previous node.
+      // If we're adding a node in any other position we need to splice it in
+      // between the current node and the previous node.
     } else {
       // First, find the previous node and the current node.
       let prev = this.get(position - 1);
@@ -1089,8 +1095,8 @@ class LinkedList {
     if (position === 0) {
       this.head = this.head.next;
 
-    // For any other position we need to look up the previous node and set it
-    // to the node after the current position.
+      // For any other position, we need to look up the previous node and set it
+      // to the node after the current position.
     } else {
       let prev = this.get(position - 1);
       prev.next = prev.next.next;
@@ -1227,7 +1233,10 @@ class Tree {
    */
 
   add(value, parentValue) {
-    let newNode = { value, children: [] };
+    let newNode = {
+      value,
+      children: []
+    };
 
     // If there is no root, just set it to the new node.
     if (this.root === null) {
@@ -1249,7 +1258,7 @@ class Tree {
  * This is one of the most basic trees you could have and is probably only
  * useful if the data you are representing actually resembles a tree.
  *
- * But with some extra rules a tree can serve a lot of different purposes.
+ * But with some extra rules, a tree can serve a lot of different purposes.
  */
 
 /*** ===================================================================== ***\
@@ -1343,11 +1352,11 @@ class BinarySearchTree {
       if (value > current.value) {
         current = current.right;
 
-      // If the value is less than the current.value we move to the left.
+        // If the value is less than the current.value we move to the left.
       } else if (value < current.value) {
         current = current.left;
 
-      // Otherwise we must be equal values and we return true.
+        // Otherwise we must be equal values and we return true.
       } else {
         return true;
       }
@@ -1400,7 +1409,7 @@ class BinarySearchTree {
         // Otherwise just move on to the right node.
         current = current.right;
 
-      // If the value is less than the current.value we move to the left.
+        // If the value is less than the current.value we move to the left.
       } else if (value < current.value) {
 
         // If `left` does not exist, set it to our node, and stop traversing.
@@ -1412,8 +1421,8 @@ class BinarySearchTree {
         // Otherwise just move on to the left node.
         current = current.left;
 
-      // If the number isn't less than or greater, then it must be the same and
-      // we don't do anything.
+        // If the number isn't less than or greater, then it must be the same and
+        // we don't do anything.
       } else {
         break;
       }
