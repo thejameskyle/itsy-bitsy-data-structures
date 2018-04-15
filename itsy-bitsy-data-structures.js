@@ -1428,6 +1428,73 @@ class BinarySearchTree {
       }
     }
   }
+  
+  /**
+   * Can you have pictorial image of the BinarySearchTree shape when you adds
+   * sequence of numbers?
+   * Try to illustrate the shape of BinarySearchTree of following codes.
+   *
+   *    const numbersToAdd = [8, 5, 0, 15, 7, 1, 20];
+   *    let btree = new BinarySearchTree();
+   *    numbersToAdd.forEach (number => btree.add(number));
+   *
+   * Here is the BinarySearchTree shape on each steps of above codes.
+   *
+   *  btree.add(8)
+   *
+   *            8
+   *
+   *  btree.add(5)
+   *
+   *            8
+   *           /
+   *          5
+   *
+   *  btree.add(0)
+   *
+   *            8
+   *           /
+   *          5
+   *         /
+   *        0
+   *
+   *  btree.add(15)
+   *
+   *            8
+   *           / \
+   *          5  15
+   *         /
+   *        0
+   *
+   *  btree.add(7)
+   *
+   *            8
+   *           / \
+   *          5  15
+   *         / \
+   *        0   7
+   *
+   *  btree.add(1)
+   *
+   *            8
+   *           / \
+   *          5  15
+   *         / \
+   *        0   7
+   *         \
+   *          1
+   *
+   *  btree.add(20)
+   *
+   *            8
+   *           / \
+   *          5  15
+   *         / \   \
+   *        0   7  20
+   *         \
+   *          1
+   *
+   */
 }
 
 /*** ===================================================================== ***\
