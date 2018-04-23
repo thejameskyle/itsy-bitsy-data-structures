@@ -748,8 +748,7 @@ class Stack {
  * rather than the end. Removing the oldest items rather than the most recent.
  *
  * Again, because this limits the amount of functionality, there are many
- * different ways of implementing it. A good way might be to use a linked list
- * which we will see later.
+ * different ways of implementing it. A good way might be to use a list.
  */
 
 class Queue {
