@@ -3,7 +3,7 @@
 ***Welcome to Itsy Bitsy Data Structures!***
 
 In here are super simplified examples of many of the common data structures
-written in easy to read JavaScript.
+written in easy to read JavaScript codes.
 
 Reading through the guided code will help you learn about what data structures
 are, what their uses are, and how to discuss them.
