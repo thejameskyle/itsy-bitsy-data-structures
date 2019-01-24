@@ -1060,7 +1060,6 @@ class LinkedList {
     // We'll set the "next" field to the current head and then replace it with
     // our new node.
     if (position === 0) {
-      node.next = this.head;
       this.head = node;
 
       // If we're adding a node in any other position we need to splice it in
