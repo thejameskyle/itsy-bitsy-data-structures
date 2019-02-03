@@ -177,6 +177,25 @@
 \*** ==================================================================== ***/
 /*                                                        ELEMENTS          */
 
+/*** ==================================================================== ***\
+    ** - BIG-O NOTATION --------------------------------------------------- **
+    * =======================================================================*
+    *           a           b                                 d              *
+ O  *           a         b    O(N^2)                      d                 *
+ P  *     O(N!) a        b                O(N log N)    d                    *
+ E  *           a      b                            d                 c      *
+ R  *          a      b                          d             c        O(N) *
+ A  *          a    b                         d         c                    *
+ T  *          a  b                       d      c                           *
+ I  *         a  b                     d  c                                  *
+ O  *         ab                   c                          O(1)           *
+ N  *  e    e    e    e    ec   d    e    e    e    e    e     e    e    e   *
+ S  *      ba        c      d                                                *
+    *    ba   c        d                       f    f    f    f    f    f    *
+    ** cadf    f d    f    f    f    f    f       O(log N)                  **
+\*** ==================================================================== ***/
+/*                                                        ELEMENTS          */
+
 /**
  * Big-O Notation is a way of roughly measuring the performance of algorithms
  * in order to compare one against another when discussing them.
