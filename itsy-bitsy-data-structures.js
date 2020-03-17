@@ -1378,7 +1378,7 @@ class BinarySearchTree {
   add(value) {
     // First let's setup our node.
     let node = {
-      value: value,
+      value,
       left: null,
       right: null
     };
