@@ -188,6 +188,8 @@
  *
  * - **Time complexity** refers to the total count of operations an algorithm
  *   will perform given a set of items.
+ *   In other words, it is the total time taken by the program until its
+ *   completion.
  *
  * - **Space complexity** refers to the total memory an algorithm will take up
  *   while running given a set of items.
