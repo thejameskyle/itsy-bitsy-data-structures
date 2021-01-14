@@ -1215,6 +1215,11 @@ class Tree {
    */
 
   traverse(callback) {
+    // If the tree is empty, don't do anything.
+    if (this.root === null) {
+      return;
+    }
+
     // We'll define a walk function that we can call recursively on every node
     // in the tree.
     function walk(node) {
