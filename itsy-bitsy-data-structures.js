@@ -1050,6 +1050,11 @@ class LinkedList {
    */
 
   add(value, position) {
+    // Throw an error if position is greater than the length of the LinkedList
+    if (position > this.length) {
+      throw new Error("Add 'position' parameter should be " + this.length);
+    }
+    
     // First create a node to hold our value.
     let node = {
       value,
